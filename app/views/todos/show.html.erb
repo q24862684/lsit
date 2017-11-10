@@ -1,0 +1,9 @@
+<table class="table table-striped table-condensed">
+  <tr>
+    <td><%= @todo.title %></td>
+    <td><%= @todo.start_date %></td>
+    <td><%= @todo.due_date %></td>
+    <td><%= simple_format(@todo.description) %></td>
+  </tr>
+</table>
+<%= link_to 'Back to index', todos_path %>

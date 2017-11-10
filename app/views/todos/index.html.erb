@@ -1,0 +1,15 @@
+<table class="table table-striped table-condensed">
+ <% @todos.each do |todo| %>
+   <tr>
+     <td><%= check_box_tag 'done' %></td>
+     <td><%= todo.title %></td>
+     <td><%= todo.start_date %></td>
+     <td><%= todo.due_date %></td>
+     <td><%= link_to 'Show', todo_path(todo) %></td>
+     <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
+     <td><%= link_to 'Destroy', todo_path(todo), method: :delete, data:{ confirm: " If list is overdue, can not be deleted !" } %>
+   </tr>
+  <% end %>
+</table>
+
+<%= link_to 'New todo', new_todo_path %>
